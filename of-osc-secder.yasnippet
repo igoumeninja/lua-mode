@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# key: osc
+# contributor: Aris Bezas
+# name: of-osc-sender
+# --
+sender = of.osc()
+-- put this on setup
+sender:setup()
+-- senbd some messages
+sender:sendMsg("${1:msgName}")
