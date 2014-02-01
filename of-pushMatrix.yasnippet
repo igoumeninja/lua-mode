@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+# key: pushMatrix
+# contributor: Aris Bezas
+# name: of.pushMatrix
+# --
+of.pushMatrix()
+ of.translate(100, 300, 0)
+ of.setHexColor(0xff2220)
+ of.fill()
+ of.setPolyMode(of.POLY.WINDING_ODD)
+ of.beginShape()
+  local angleStep = TWO_PI/(100 + math.sin(of.getElapsedTimef()/5) * 60)
+  local radiusAdder = 0.5
+  local radius = 0
+  for i=1,200 do
+   local anglef = (i) * angleStep
+   local x = radius * math.cos(anglef)
+   local y = radius * math.sin(anglef)
+   of.vertex(x, y)
+   radius = radius + radiusAdder
+  end
+ of.endShape(of.CLOSE)
+of.popMatrix()
