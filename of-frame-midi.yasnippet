@@ -1,0 +1,28 @@
+# -*- mode: snippet -*-
+# key: framemidi
+# contributor: Aris Bezas
+# name: of-frame-midi
+# --
+midi = of.midi()
+----------------------------------------------------
+function setup()
+        of.setWindowTitle("gea+midi")
+        midi:setup()
+        of.background(0)
+
+end
+----------------------------------------------------
+function update()
+         midi:update()
+end
+----------------------------------------------------
+function draw()
+      of.fill()
+      of.setColor(0,30,midi:map(19,0,255),250)
+      of.rect(0,0,of.getWidth(), of.getHeight())
+end
+----------------------------------------------------
+function keyPressed(key)
+         if key == string.byte("s") then
+         end
+end
